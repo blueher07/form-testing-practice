@@ -5,11 +5,23 @@
   <title>Web Form Testing Demo</title>
 </head>
 <body>
-  <form>
-    <select required>
-      <option value="">Select a city</option>
-      <option>Chisinau</option>
-    </select>
-  </form>
+<h2>Форма регистрации (тест)</h2>
+<form id="testForm">
+  <label>Выберите город:</label><br>
+  <select required>
+    <option value="">Select a city</option>
+    <option>Chisinau</option>
+  </select><br><br>
+
+  <button type="submit">Submit</button>
+</form>
+<p id="result"></p>
+
+<script>
+document.getElementById("testForm").addEventListener("submit", function(e){
+  e.preventDefault(); // страница не перезагружается
+  document.getElementById("result").textContent = "Форма успешно проверена!";
+});
+</script>
 </body>
 </html>
